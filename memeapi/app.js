@@ -23,24 +23,26 @@ fetch('https://api.imgflip.com/get_memes')
         </figure>`;
 			})
 			.join('');
-		console.log(img);
+		// console.log(img);
 		// gallary.append(img);
 		// gallary.innerHTML(img);
 		gallary.insertAdjacentHTML('afterbegin', img);
 	});
 
-// const allimg = (num) => {
-// 	fetch('https://api.imgflip.com/get_memes')
-// 		.then((res) => res.json())
-// 		.then((data) => {
-// 			imgs.src = `${data.data.memes[num].url}`;
-// 			imgCaption.innerText = data.data.memes[num].name;
-// 			figure.prepend(imgs);
-// 			figure.append(imgCaption);
-// 			allImages = data.data.memes;
-// 		});
-// };
+const allimg = () => {
+	fetch('https://api.imgflip.com/get_memes')
+		.then((res) => res.json())
+		.then((data) => {
+			// imgs.src = `${data.data.memes[num].url}`;
+			// imgCaption.innerText = data.data.memes[num].name;
+			// figure.prepend(imgs);
+			// figure.append(imgCaption);
+			// allImages = data.data.memes;
+			return data.data.memes;
+		});
+};
 // allimg(2);
+console.log(allimg());
 // allimg(2);
 // allimg(5);
 // allimg(3);
