@@ -1,8 +1,10 @@
 let memes = document.querySelector('.memes');
+let spain = document.querySelector('.spain');
 
 let getuser = async () => {
 	let res = await fetch('https://api.imgflip.com/get_memes');
 	let data = await res.json();
+	data ? (spain.style.display = 'none') : console.log('no');
 	return data;
 };
 
@@ -11,7 +13,7 @@ getuser().then((data) => {
 		.map((meme) => {
 			return `<div class="col-md-3 mx-3 meme">
         <div class="card" style="width: 18rem">
-        <img src="${meme.url}" id="img" class="card-img-top" alt="..." />
+        <img src="${meme.url}" id="${meme.id}" class="card-img-top" alt="..." />
         <div class="card-body">
         <h5 class="card-title">${meme.name}</h5>
         <a target="_blank" href="${meme.url}" class="btn btn-primary download">Download</a>
@@ -21,8 +23,10 @@ getuser().then((data) => {
 		})
 		.join('');
 	memes.insertAdjacentHTML('afterbegin', meme);
+	let download = document.querySelector(meme.id);
+	// download.addEventListener('click', (e) => {
+	// 	console.log(e);
+	// });
 });
 
 // let download = document.querySelectorAll('#img');
-let download = document.getElementById('img');
-console.log(download);
