@@ -4,6 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Graphity</title>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Galada&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
@@ -11,7 +16,7 @@
 			<div class="main">
 				<div class="text-form">
 					<div class="massage">
-						<h3>Massage</h3>
+						<h1>লিখুন</h1>
 						<textarea
 							name=""
 							id="peragraph"
@@ -19,35 +24,55 @@
 							rows="8"
 							onkeyup="text(this)"
 						>
-sfdsd</textarea
+বাংলাদেশ</textarea
 						>
 					</div>
 					<div class="font-color">
-						<h3>Font Color</h3>
-						<button id="black"></button>
-						<button id="red"></button>
-						<button id="green"></button>
-						<button id="blue"></button>
+						<h2>ফন্ট কালার</h2>
+						<button id="fnBlack" onclick="fontColor('black')"></button>
+						<button id="fnRed" onclick="fontColor('red')"></button>
+						<button id="fnGreen" onclick="fontColor('green')"></button>
+						<button id="fnBlue" onclick="fontColor('blue')"></button>
 					</div>
 					<div class="backgroound-color">
 						<h3>backgroound Color</h3>
-						<button></button>
-						<button></button>
-						<button></button>
-						<button></button>
+						<button id="bgBlack" onclick="backgroundColor('black')"></button>
+						<button id="bgRed" onclick="backgroundColor('red')"></button>
+						<button id="bgGray" onclick="backgroundColor('gray')"></button>
+						<button id="bgOrange" onclick="backgroundColor('orange')"></button>
 					</div>
+
+					<div class="font-weight">
+						<h3>Font Wieght</h3>
+						<button onclick="fontWeight('normal')">Light</button>
+						<button onclick="fontWeight('bold')">Bold</button>
+					</div>
+
 					<div class="cont-size">
 						<h3>Font size</h3>
-						<input type="range" />
+						<input type="range" min="8" max="30" value="15" id="range-slider" />
+					</div>
+					<div class="text-position">
+						<button onclick="fontPosition('top')">Top</button>
+						<button onclick="fontPosition('bottom')">Bottom</button>
+						<button onclick="fontPosition('center')">Center</button>
+						<button onclick="fontPosition('middle')">Middle</button>
+						<button onclick="fontPosition('left')">Left</button>
+						<button onclick="fontPosition('right')">Right</button>
+					</div>
+					<div class="downlod">
+						<button onclick="download()">Download</button>
 					</div>
 				</div>
 				<div class="content">
 					<div class="main-img">
-						<p></p>
+						<p id="massage">বাংলাদেশ</p>
 					</div>
 				</div>
 			</div>
 		</main>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+		<script src="domToImg.js"></script>
 		<script src="app.js"></script>
 	</body>
 </html>

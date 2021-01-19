@@ -2,12 +2,17 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	font-family: 'Sunshiney', cursive;
+	/* font-family: 'Galada', cursive; */
+}
 main {
 	width: 85%;
 	display: block;
 	margin: auto;
 	background-color: blanchedalmond;
 	height: 100vh;
+	padding: 50px;
 }
 
 .main {
@@ -25,16 +30,111 @@ main {
 .massage textarea {
 	resize: none;
 	font-size: 19px;
+	padding: 15px;
+	border: none;
+	box-shadow: inset 8px 8px 16px #d9c8ae, inset -8px -8px 16px #ffffec;
+	border-radius: 14px;
+	background: #ffebcd;
+	margin: 15px;
+	outline: none;
 }
+
 .font-color button,
-.backgroound-color button {
+.backgroound-color button,
+.font-weight button {
 	height: 30px;
 	width: 30px;
 	border-radius: 50%;
 	margin: 5px;
-	background-color: blue;
+	border: none;
 	cursor: pointer;
+	box-shadow: 8px 8px 16px #d9c8ae, -8px -8px 16px #ffffec;
 }
 .content {
 	width: 50%;
+}
+.main-img {
+	background-color: rgba(0, 128, 0, 0.466);
+	width: 400px;
+	height: 400px;
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-img p {
+	padding: 30px;
+	line-height: 35px;
+}
+
+/* Text Color button */
+#fnBlack {
+	background-color: #000;
+}
+#fnRed {
+	background-color: red;
+}
+#fnGreen {
+	background-color: green;
+}
+#fnBlue {
+	background-color: blue;
+}
+/* Background Color Button */
+#bgBlack {
+	background-color: #000;
+}
+#bgRed {
+	background-color: red;
+}
+#bgGray {
+	background-color: gray;
+}
+#bgOrange {
+	background-color: orange;
+}
+
+/* Postion Button */
+.text-position {
+	display: flex;
+	width: 150px;
+	flex-wrap: wrap;
+}
+
+.text-position button,
+.font-weight button {
+	border-radius: 0;
+	margin: 5px;
+	width: 40%;
+	padding: 5px 10px;
+	color: navy;
+	font-weight: 500;
+	cursor: pointer;
+	background-color: rgba(0, 128, 0, 0.466);
+	color: #fff;
+	border: none;
+}
+
+/* Download button */
+.downlod button {
+	margin-top: 15px;
+	background: linear-gradient(
+		123deg,
+		#2e99b0 0%,
+		#2e99b0 40%,
+		#fcd77f calc(40% + 1px),
+		#fcd77f 60%,
+		#ff2e4c calc(60% + 1px),
+		#ff2e4c 75%,
+		#1e1548 calc(75% + 1px),
+		#1e1548 100%
+	);
+	border: none;
+	font-size: medium;
+	color: #fff;
+	font-weight: 600;
+	padding: 10px 25px;
+	cursor: pointer;
 }
