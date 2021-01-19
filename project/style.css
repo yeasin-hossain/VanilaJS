@@ -1,4 +1,5 @@
 .meme img {
-	height: 250px;
+	overflow: hidden;
+	height: 300px;
 	/* width: 250px; */
 }
