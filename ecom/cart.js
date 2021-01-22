@@ -1,5 +1,6 @@
 let cartItems = JSON.parse(localStorage.getItem('cartItem'));
 let cartBody = document.querySelector('.cart-body');
+let total = document.querySelector('#total');
 let totalPrice = [];
 cartItems
 	.map((cartItem) => {
@@ -7,8 +8,8 @@ cartItems
 			.then((res) => res.json())
 			.then((item) => {
 				// console.log(item.title);
-				totalPrice.push(item.price * 5);
-				totalSum(item.price, 3);
+				totalPrice.push(item.price);
+				totalSum(item.price);
 				let items = `
 			<div class="cart-item flex justify-between my-5 bg-white">
 			<div class="cart-img w-20">
@@ -64,8 +65,20 @@ cartItems
 	})
 	.join(' ');
 
-const totalSum = async (e, b) => {
+const totalSum = async (e) => {
 	// return await (sum = b * e);
-	// totalPrice.push((sum = b * e));
-	// console.log(b * e);
+	totalPrice.push(e);
+	ti();
 };
+
+function ti() {
+	let price = 0;
+	for (let i = 0; i < totalPrice.length; i++) {
+		price = price + totalPrice[i];
+		console.log(price);
+	}
+	// console.log(totalPrice);
+	// total.insertAdjacentText('afterbegin', price);
+	total.innerText = Math.round(price);
+	// total.append(price);
+}
